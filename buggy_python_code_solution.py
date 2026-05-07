@@ -53,7 +53,7 @@ if __name__ == '__main__':
     print("2. Code injection vulnerability: use string=;print('Own code executed') #")
     print("3. Yaml deserialization vulnerability: see file_solution.yaml for a solution")
     print("4. Use of assert statements vulnerability: run program with -O argument")
-    choice  = input("Select vulnerability: ")
+    choice  = raw_input("Select vulnerability: ")
     if choice == "1": 
         new_person = Person("Vickie")  
         print_nametag(input("Please format your nametag: "), new_person)
@@ -64,6 +64,6 @@ if __name__ == '__main__':
         load_yaml(raw_input("File name: "))
         print("Executed -ls on current folder")
     elif choice == "4":
-        password = input("Enter master password: ")
+        password = raw_input("Enter master password: ")
         authenticate(password)
 
