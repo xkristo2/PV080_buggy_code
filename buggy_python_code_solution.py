@@ -37,7 +37,7 @@ def fetch_website(urllib_version, url):
 
 def load_yaml(filename):
     stream = open(filename)
-    deserialized_data = yaml.load(stream, Loader=yaml.Loader) #deserializing data
+    deserialized_data = yaml.safe_load(stream, Loader=yaml.Loader) #deserializing data
     return deserialized_data
     
 def authenticate(password):
@@ -56,9 +56,9 @@ if __name__ == '__main__':
     choice  = raw_input("Select vulnerability: ")
     if choice == "1": 
         new_person = Person("Vickie")  
-        print_nametag(input("Please format your nametag: "), new_person)
+        print_nametag(raw_input("Please format your nametag: "), new_person)
     elif choice == "2":
-        urlib_version = input("Choose version of urllib: ")
+        urlib_version = raw_input("Choose version of urllib: ")
         fetch_website(urlib_version, url="https://www.google.com")
     elif choice == "3":
         load_yaml(raw_input("File name: "))
