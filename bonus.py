@@ -44,7 +44,7 @@ profile = Profile()
 
 for _ in range(100):
     try:
-        merge(json.loads(input("input json info to update profile>>>")), profile)
+        merge(json.loads(raw_input("input json info to update profile>>>")), profile)
     except Exception as e:
         print("Error: ", e)
         continue
