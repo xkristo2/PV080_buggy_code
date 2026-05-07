@@ -42,8 +42,10 @@ def load_yaml(filename):
     
 def authenticate(password):
     # Assert that the password is correct
-    assert password == "Iloveyou", "Invalid password!"
-    print("Successfully authenticated!")
+    if password == "Iloveyou":
+        print("Successfully authenticated!")
+    else:
+        print("Invalid password!")
 
 if __name__ == '__main__':
     print("Vulnerabilities:")
@@ -59,7 +61,7 @@ if __name__ == '__main__':
         urlib_version = input("Choose version of urllib: ")
         fetch_website(urlib_version, url="https://www.google.com")
     elif choice == "3":
-        load_yaml(input("File name: "))
+        load_yaml(raw_input("File name: "))
         print("Executed -ls on current folder")
     elif choice == "4":
         password = input("Enter master password: ")
